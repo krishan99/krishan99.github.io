@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{TITLE}} — Krishan Amin</title>
+  <meta name="description" content="{{DESCRIPTION}}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+{{FONT_LINKS}}
+  <link rel="stylesheet" href="../../assets/theme.css">
+
+  <style>
+    /* Per-post token overrides from front-matter `theme:` */
+    :root {
+{{THEME_VARS}}
+    }
+
+    body {
+      background: var(--bg-image);
+      color: var(--fg);
+      min-height: 100vh;
+      font-family: var(--font);
+      -webkit-font-smoothing: antialiased;
+      padding: 0 28px;
+    }
+    .wrap { max-width: 680px; margin: 0 auto; padding: 80px 0 96px; }
+
+    .topbar {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 13px; letter-spacing: 0.02em; color: var(--mut);
+    }
+    .topbar a { display: flex; align-items: center; gap: 9px; transition: color .15s; }
+    .topbar a:hover { color: var(--ac); }
+    .mark { width: 9px; height: 9px; background: var(--ac-grad); box-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+
+    .post-head { margin-top: 40px; }
+    .post-meta {
+      display: flex; align-items: center; gap: 14px;
+      font-family: var(--font-mono);
+      font-size: 12.5px; letter-spacing: 0.02em; color: var(--mut);
+    }
+    .post-tag { text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; color: var(--dim); }
+    h1.post-title {
+      font-size: 30px; font-weight: 700; line-height: 1.2;
+      letter-spacing: -0.02em; margin: 12px 0 0;
+    }
+    .rule { height: 2px; background: var(--ac-grad); margin-top: 22px; }
+
+    /* Prose */
+    article {
+      margin-top: 34px;
+      font-size: 17px; line-height: 1.7; color: var(--fg);
+    }
+    article > *:first-child { margin-top: 0; }
+    article p { margin: 0 0 1.25em; color: var(--fg); }
+    article h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; margin: 2em 0 0.6em; }
+    article h3 { font-size: 18px; font-weight: 600; margin: 1.6em 0 0.5em; }
+    article a { color: var(--ac); border-bottom: 1px solid var(--ac-soft); transition: border-color .15s; }
+    article a:hover { border-bottom-color: var(--ac); }
+    article strong { color: var(--fg); font-weight: 600; }
+    article em { color: var(--mut); }
+    article ul, article ol { padding-left: 1.3em; margin: 0 0 1.25em; }
+    article li { margin: 0.3em 0; }
+    article blockquote {
+      margin: 1.5em 0; padding: 0.2em 0 0.2em 1.2em;
+      border-left: 2px solid var(--ac); color: var(--mut); font-style: italic;
+    }
+    article hr { border: 0; height: 1px; background: var(--faint); margin: 2.5em 0; }
+    article code {
+      font-family: var(--font-mono); font-size: 0.86em;
+      background: var(--faint); color: var(--fg);
+      padding: 0.15em 0.4em; border-radius: 3px;
+    }
+    article pre {
+      background: var(--faint); border-radius: 6px;
+      padding: 16px 18px; overflow-x: auto; margin: 0 0 1.5em;
+      font-size: 13.5px; line-height: 1.6;
+    }
+    article pre code { background: none; padding: 0; font-size: inherit; }
+    article img { max-width: 100%; border-radius: 6px; }
+
+    footer {
+      display: flex; align-items: center; gap: 9px; margin-top: 64px;
+      font-family: var(--font-mono);
+      font-size: 12px; letter-spacing: 0.02em; color: var(--dim);
+    }
+    .footer-mark { width: 7px; height: 7px; background: var(--ac-grad); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav class="topbar">
+      <a href="../../"><span class="mark"></span>Krishan Amin</a>
+      <a href="../../">index</a>
+    </nav>
+
+    <div class="post-head">
+      <div class="post-meta">
+        <span class="post-date">{{DATE}}</span>
+        <span class="post-tag">{{TAG}}</span>
+      </div>
+      <h1 class="post-title">{{TITLE}}</h1>
+    </div>
+
+    <div class="rule"></div>
+
+    <article>
+{{BODY}}
+    </article>
+
+    <footer>
+      <span class="footer-mark"></span>hand-written html &middot; no trackers &middot; &copy; 2026
+    </footer>
+
+  </div>
+</body>
+</html>
